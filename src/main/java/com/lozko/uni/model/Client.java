@@ -6,12 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Client {
 
   @Id
@@ -19,6 +23,6 @@ public class Client {
   @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="pk_sequence")
   private int id;
 
-  private final String clientName;
-  private final int age;
+  private String clientName;
+  private int age;
 }
